@@ -17,3 +17,10 @@ services:
     ports:
       - 127.0.0.1:9200:9200
       - 127.0.0.1:9300:9300
+
+  rabbitmq:
+    image: rabbitmq:management
+    restart: always
+    ports:
+      - 127.0.0.1:8080:15672
+      - 127.0.0.1:5672:5672

@@ -3,3 +3,5 @@ flask-restx
 SQLAlchemy
 elasticsearch7
 textblob
+marshmellow
+Flask-Security
