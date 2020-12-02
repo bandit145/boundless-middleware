@@ -9,7 +9,13 @@ services:
       - 127.0.0.1:5432:5432
     restart: always
 
-  elastic:
+
+  logstash:
+    image: logstash:7.9.3
+    restart: always
+
+
+  elasticsearch:
     image: elasticsearch:7.9.3
     environment:
       - discovery.type=single-node
