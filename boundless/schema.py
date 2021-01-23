@@ -1,4 +1,4 @@
-from marshmellow import Schema, fields
+from marshmallow import Schema, fields
 
 
 class MessageRequest(Schema):

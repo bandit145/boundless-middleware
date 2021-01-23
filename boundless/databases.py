@@ -1,4 +1,6 @@
 from elasticsearch7 import Elasticsearch
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 import textblob
 
 INDEX_NAME = "boundless"

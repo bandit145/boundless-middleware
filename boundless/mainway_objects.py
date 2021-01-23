@@ -12,6 +12,15 @@ location_poi = Table(
 )
 
 
+class Server(Base):
+    __tablename__ = "servers"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    server_type = Column(String, nullable=False)
+    # depending on the service this could be int or whatever but store as string
+    server_id = Column(String, nullable=False)
+    subversive_word = relationship("SubversiveWord")
+
+
 class Poi(Base):
     __tablename__ = "pois"
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -35,6 +44,7 @@ class Location(Base):
 class SubversiveWord(Base):
     __tablename__ = "subversive_words"
     word = Column(String, primary_key=True)
+    server_id = Column(Integer, ForeignKey("servers.id"))
 
 
 class Incident(Base):
