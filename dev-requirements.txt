@@ -1,2 +1,4 @@
+discord.py
+aio-pika
 pytest
 black

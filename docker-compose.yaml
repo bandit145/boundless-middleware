@@ -9,9 +9,17 @@ services:
       - 127.0.0.1:5432:5432
     restart: always
 
+  kibana:
+    image: kibana:7.9.3
+    environment:
+      ELASTICSEARCH_HOSTS: '["http://elasticsearch:9200"]'
+    ports:
+      - 127.0.0.1:5601:5601
 
   logstash:
     image: logstash:7.9.3
+    volumes:
+      - ./tests/logstash_config/pipelines:/usr/share/logstash/pipeline/:Z
     restart: always
 
 
